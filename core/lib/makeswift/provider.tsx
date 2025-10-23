@@ -1,19 +1,19 @@
 'use client';
 
-import { ReactRuntimeProvider, RootStyleRegistry, type SiteVersion } from '@makeswift/runtime/next';
+import { ReactRuntimeProvider, RootStyleRegistry } from '@makeswift/runtime/next';
 
 import { runtime } from '~/lib/makeswift/runtime';
 import '~/lib/makeswift/components';
 
 export function MakeswiftProvider({
   children,
-  siteVersion,
+  previewMode,
 }: {
   children: React.ReactNode;
-  siteVersion: SiteVersion | null;
+  previewMode: boolean;
 }) {
   return (
-    <ReactRuntimeProvider runtime={runtime} siteVersion={siteVersion}>
+    <ReactRuntimeProvider runtime={runtime} previewMode={previewMode}>
       <RootStyleRegistry enableCssReset={false}>{children}</RootStyleRegistry>
     </ReactRuntimeProvider>
   );
