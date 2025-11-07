@@ -111,6 +111,10 @@ export default async function Category(props: Props) {
 
   return (
     <>
+      <Slot
+        label={`${category.name} top content`}
+        snapshotId={`category-${categoryId}-top-content`}
+      />
       <MockAlgoliaPLP categoryId={categoryId} urlSearchQuery={category.name} />
     </>
   )
