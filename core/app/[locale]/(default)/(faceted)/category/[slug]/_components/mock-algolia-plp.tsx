@@ -15,6 +15,10 @@ function MockProductsView({ categoryId, urlSearchQuery }: { categoryId?: number,
 }
 
 export function MockAlgoliaPLP({ urlSearchQuery, categoryId }: { urlSearchQuery?: string, categoryId?: number }) {
+    if (typeof window === 'undefined') {
+        return null;
+    }
+    
     return (
         <MockProductsView categoryId={categoryId} urlSearchQuery={urlSearchQuery} />
     )
