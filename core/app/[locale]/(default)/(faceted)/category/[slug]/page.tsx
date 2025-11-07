@@ -25,9 +25,6 @@ import { getCategoryPageData } from './page-data';
 import { MockAlgoliaPLP } from './_components/mock-algolia-plp';
 import { Breadcrumb } from 'react-instantsearch';
 
-export const experimental_ppr = false;
-export const dynamic = "force-dynamic";
-
 const getCachedCategory = cache((categoryId: number) => {
   return {
     category: categoryId,
